@@ -1,0 +1,33 @@
+{
+  "name": "Project3",
+  "version": "1.0.0",
+  "description": "**WDI-SM-43 Project 3 : Virtual Town Hall**",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boonereynolds/Project3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boonereynolds/Project3/issues"
+  },
+  "homepage": "https://github.com/boonereynolds/Project3#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.9.0",
+    "morgan": "^1.8.1",
+    "serve-favicon": "^2.4.1"
+  }
+}
