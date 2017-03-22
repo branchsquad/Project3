@@ -67,15 +67,25 @@ function editRep(req, res) {
   })
 }
 
-function updateRep(req, res) {
-  var id = req.params.id
+function updateRep(request, response) {
+  var id = request.params.id
+  console.log(rep)
 
-  Rep.findById(id, function(err, rep) {
-    if (err || !rep) throw err
-    rep.save(function(err, updatedRep) {
-      if (err) throw err
+  User.findById({_id: id}, function(error, user){
+    if(error) response.json({message: 'could not find rep b/c' + error})
 
-      res.json(updatedRep)
+    if(request.body.firstname) user.firstname = request.body.firstname
+    if(request.body.lastname) user.lastname = request.body.lastname
+    if(request.body.city) user.city = request.body.city
+    if(request.body.state) user.state = request.body.state
+    if(request.body.zip) user.zip = request.body.zip
+    if(request.body.county) user.county = request.body.county
+    if(request.body.party) user.party = request.body.party
+    if(request.body.district) user.district = request.body.district
+
+    user.save(function(error){
+      if(error) response.json({message: 'could not update'})
+      response.json({message: 'user successfully updated'})
     })
   })
 }

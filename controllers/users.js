@@ -80,7 +80,7 @@ function editUser(req, res) {
   var id = req.params.id
   User.findById({_id: id}, function(err, user) {
     if (err) throw err
-    res.render('./users/edit',
+    res.render('./edit',
     {
       message: req.flash('#'),
       user: user
